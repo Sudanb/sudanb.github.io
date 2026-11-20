@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -25,8 +25,8 @@
 </nav>
 
 <header class="container proj-head">
-  <div class="kicker">Field robot · Mechanical + controls + sim</div>
-  <h1>Skid-Steer Field Robot &mdash; Digital Twin &amp; Sim-to-Real Study</h1>
+  <div class="kicker">Field robot · Mechanical + controls</div>
+  <h1>Skid-Steer Field Robot</h1>
   <div class="proj-meta">
     <span>2025 &ndash; Present</span>
     <span>Kansas State University · FarmsLab</span>
@@ -50,10 +50,10 @@
     <h2>Overview</h2>
     <p>
       An under-canopy skid-steer platform designed from scratch for row-crop
-      scouting and spraying tasks. The project spans the full stack: a
-      CAD-first mechanical design and build, a CAN-bus motor-control stack, a
-      ROS2 bringup and perception pipeline, and a digital twin used to study
-      how controller behavior transfers from simulation to the real robot.
+      scouting and spraying tasks. The project covers mechanical design and
+      fabrication, motor control and the CAN-bus electrical stack, and the ROS2
+      software running on the robot &mdash; bringup, sensing, and the custom
+      controller that drives the four wheels.
     </p>
   </section>
 
@@ -63,9 +63,9 @@
       <li>Full mechanical design and fabrication of a ~125 kg under-canopy robotic platform.</li>
       <li>FEA on key load-bearing components ahead of fabrication.</li>
       <li>MATLAB simulation for torque and envelope estimates to drive actuator selection.</li>
+      <li>Four-motor skid-steer drive on a CAN bus; power distribution, bus protection, and pre-charge design.</li>
       <li>ROS2 bringup and perception software for stereo cameras, GNSS, IMU, and LiDAR.</li>
-      <li>Modular C++ ROS2 controller stack (motor, estimator, and controller interfaces) with kinematic shaping and a minimum-turning-radius projection.</li>
-      <li>Isaac Sim digital twin with rosbag-driven replay for controller validation and sim-vs-real comparison.</li>
+      <li>Modular C++ ROS2 controller stack (motor, estimator, and controller interfaces) with kinematic shaping and a minimum-turning-radius projection; runs on-robot at 100 Hz.</li>
     </ul>
   </section>
 
@@ -74,14 +74,13 @@
     <div class="chips">
       <span class="chip accent">ROS2 Humble</span>
       <span class="chip accent">C++ / pluginlib</span>
-      <span class="chip">Isaac Sim</span>
       <span class="chip">ODrive S1</span>
       <span class="chip">CAN bus</span>
       <span class="chip">SocketCAN · J1939</span>
       <span class="chip">SolidWorks</span>
       <span class="chip">ANSYS</span>
       <span class="chip">MATLAB / Simulink</span>
-      <span class="chip">URDF · USD</span>
+      <span class="chip">URDF</span>
     </div>
   </section>
 
@@ -100,16 +99,19 @@
       <figure class="media" data-img="images/skidsteer-4.webp" data-alt="In the field">
         <div class="placeholder"><div class="label">Field</div><div class="caption">Robot in rows</div><div class="filename">images/skidsteer-4.webp</div></div>
       </figure>
-      <figure class="media" data-img="images/skidsteer-5.webp" data-alt="Isaac Sim digital twin">
-        <div class="placeholder"><div class="label">Sim</div><div class="caption">Isaac Sim digital twin</div><div class="filename">images/skidsteer-5.webp</div></div>
+      <figure class="media" data-img="images/skidsteer-5.webp" data-alt="Controller trace">
+        <div class="placeholder"><div class="label">Controls</div><div class="caption">Controller response trace</div><div class="filename">images/skidsteer-5.webp</div></div>
       </figure>
-      <figure class="media" data-img="images/skidsteer-6.webp" data-alt="Sim-vs-real plot">
-        <div class="placeholder"><div class="label">Analysis</div><div class="caption">Sim-vs-real trajectory overlay</div><div class="filename">images/skidsteer-6.webp</div></div>
+      <figure class="media" data-img="images/skidsteer-6.webp" data-alt="CAN topology">
+        <div class="placeholder"><div class="label">System</div><div class="caption">Wiring / CAN topology</div><div class="filename">images/skidsteer-6.webp</div></div>
       </figure>
     </div>
   </section>
 
-  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+  <p style="margin-top:20px;">
+    <a class="btn ghost x-nav" href="projects.html">&larr; All projects</a>
+    <a class="btn ghost x-nav" href="project-digital-twin.html">Digital twin for this platform &rarr;</a>
+  </p>
 
 </main>
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Sim Digital Twin & Sim-to-Real — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html#about">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Simulation · Sim-to-Real · Isaac Sim</div>
+  <h1>Isaac Sim Digital Twin &amp; Sim-to-Real Study</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; Present</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>First author</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/twin-hero.webp" data-alt="Isaac Sim digital twin of the skid-steer robot">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Isaac Sim digital twin next to the real robot</div>
+        <div class="filename">images/twin-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      An Isaac Sim digital twin of the skid-steer platform used to study how
+      controller behavior and actuation modes transfer from simulation to the
+      real robot. The methodology drives a shared controller from a real rosbag
+      inside the simulator and against the physical robot in parallel, then
+      aligns the two streams for comparison.
+    </p>
+    <p>
+      The work is written up as an IEEE-format manuscript focused on the
+      digital-twin build and the sim-to-real procedure.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Built the Isaac Sim 5.0 digital twin from URDF/USD, including physics configuration tuned for stable wheel contact.</li>
+      <li>OmniGraph scriptnode logging synchronized sim + real CSV data keyed to bag <code>/clock</code>.</li>
+      <li>Sim-to-real alignment pipeline: offline rosbag export + cross-correlation + <code>merge_asof</code> time alignment for repeatable comparison.</li>
+      <li>Compared actuation modes and drew practical conclusions about which transfer reliably between sim and the physical platform.</li>
+      <li>Rosbag-driven replay through an OmniGraph controller so a single controller implementation drives both sides.</li>
+      <li>Wrote the IEEE-format manuscript (methods, modeling assumptions, validation procedure).</li>
+    </ul>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">Isaac Sim 5.0</span>
+      <span class="chip accent">OmniGraph</span>
+      <span class="chip">ROS2 Humble</span>
+      <span class="chip">rosbag2</span>
+      <span class="chip">URDF · USD</span>
+      <span class="chip">PhysX</span>
+      <span class="chip">pandas</span>
+      <span class="chip">Python · C++</span>
+      <span class="chip">WSL2 · DDS</span>
+      <span class="chip">LaTeX / IEEEtran</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/twin-1.webp" data-alt="Digital twin in simulator">
+        <div class="placeholder"><div class="label">Sim</div><div class="caption">Digital twin in Isaac Sim</div><div class="filename">images/twin-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/twin-2.webp" data-alt="OmniGraph setup">
+        <div class="placeholder"><div class="label">OmniGraph</div><div class="caption">Scriptnode logging graph</div><div class="filename">images/twin-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/twin-3.webp" data-alt="Sim vs real overlay">
+        <div class="placeholder"><div class="label">Analysis</div><div class="caption">Sim-vs-real trajectory overlay</div><div class="filename">images/twin-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/twin-4.webp" data-alt="Alignment plot">
+        <div class="placeholder"><div class="label">Alignment</div><div class="caption">Cross-correlation alignment</div><div class="filename">images/twin-4.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/twin-5.webp" data-alt="Rosbag replay">
+        <div class="placeholder"><div class="label">Pipeline</div><div class="caption">Rosbag replay path</div><div class="filename">images/twin-5.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/twin-6.webp" data-alt="Side-by-side sim and real">
+        <div class="placeholder"><div class="label">Side-by-side</div><div class="caption">Sim and real doing the same run</div><div class="filename">images/twin-6.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;">
+    <a class="btn ghost x-nav" href="projects.html">&larr; All projects</a>
+    <a class="btn ghost x-nav" href="project-skidsteer.html">&larr; The physical robot</a>
+  </p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>
