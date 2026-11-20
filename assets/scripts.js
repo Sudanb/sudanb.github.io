@@ -6,6 +6,36 @@
 //   5. IntersectionObserver reveal animations
 //   6. Active-nav highlighting on landing-page anchors
 
+/* 0. Back bar — injected on every page except the landing. */
+(function () {
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (path === '' || path === 'index.html') return;
+
+  let href, label;
+  if (path === 'projects.html' || path === 'cv.html') {
+    href = 'index.html';
+    label = 'Home';
+  } else if (path.startsWith('project-')) {
+    href = 'projects.html';
+    label = 'All projects';
+  } else {
+    href = 'index.html';
+    label = 'Home';
+  }
+
+  const bar = document.createElement('div');
+  bar.className = 'back-bar';
+  bar.innerHTML = '<a class="x-nav" href="' + href +
+    '"><span class="arrow">&larr;</span> <span>' + label + '</span></a>';
+
+  const nav = document.querySelector('nav.site-nav');
+  if (nav && nav.parentNode) {
+    nav.parentNode.insertBefore(bar, nav.nextSibling);
+  } else {
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+})();
+
 /* 1. Page fade — only on outgoing navigation */
 (function () {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

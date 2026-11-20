@@ -147,6 +147,35 @@ nav.site-nav {
 .nav-links a:hover  { color: var(--text); background: rgba(255, 255, 255, 0.04); }
 .nav-links a.active { color: var(--text); background: rgba(255, 255, 255, 0.06); }
 
+/* ---------- Back bar (sub-pages) ---------- */
+.back-bar {
+  position: relative;
+  z-index: 3;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 28px 0;
+}
+.back-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 8px;
+  margin-left: -8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.14s ease, background 0.14s ease, transform 0.08s ease;
+}
+.back-bar a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+}
+.back-bar a:active { transform: translateX(-2px); }
+.back-bar a .arrow { font-size: 13px; color: var(--accent); }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
