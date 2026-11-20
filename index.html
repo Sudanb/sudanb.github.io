@@ -8,86 +8,185 @@
 <meta name="description" content="Graduate researcher in field robotics at Kansas State University. Mechanical design, ROS2, computer vision, and edge AI for agriculture.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <a class="nav-brand" href="#top">sudan_baral<span class="dot">//</span></a>
     <div class="nav-links">
-      <a class="active" href="index.html">About</a>
+      <a href="#about"    data-anchor="about"    class="active">About</a>
       <a class="x-nav" href="projects.html">Projects</a>
       <a class="x-nav" href="cv.html">CV</a>
-      <a class="x-nav" href="contact.html">Contact</a>
+      <a href="#contact"  data-anchor="contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<header class="container hero">
-  <div class="header-flex">
-    <img id="avatar" class="avatar hidden" alt="Sudan Baral">
-    <div>
-      <div class="eyebrow">Field robotics · Perception · Edge AI</div>
-      <h1>Sudan Baral</h1>
-      <p class="lede">
-        Graduate researcher at Kansas State University's FarmsLab. I design and
-        build field robots end-to-end &mdash; from the mechanical platform and
-        motor control through ROS2 software, real-time computer vision, and
-        on-robot edge AI.
-      </p>
-      <div class="meta">
-        <span><a href="mailto:sudanb@ksu.edu">sudanb@ksu.edu</a></span>
-        <span><a href="https://www.linkedin.com/in/sudan-baral-720019179" target="_blank" rel="noopener">LinkedIn</a></span>
-        <span><a href="https://github.com/Sudanb" target="_blank" rel="noopener">GitHub</a></span>
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-scene" id="top" data-nav="about">
+    <div class="hero-grid">
+      <div class="hero-main reveal in">
+        <div class="eyebrow">Field robotics · Perception · Edge AI</div>
+        <h1>
+          Robots that <span class="accent">understand</span><br>
+          the fields they work in.
+        </h1>
+        <p class="hero-sub">
+          I'm Sudan &mdash; a graduate researcher at Kansas State University.
+          I design and build field robots end-to-end, from mechanical platform
+          and motor control through ROS2 software and on-robot computer vision.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projects">See the work</a>
+          <a class="btn secondary x-nav" href="cv.html">View CV</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="dot"></span> Manhattan, Kansas</span>
+          <span><span class="dot"></span> Available Summer 2027</span>
+          <span><span class="dot"></span> M.S. defended Nov 2026</span>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="card">
-    <h2>About</h2>
-    <p>
-      I just completed an M.S. in Biological and Agricultural Engineering with a
-      Field Robotics focus (advisor: Dr. Ajay Sharda) and am continuing into a
-      Ph.D. leaning toward on-robot computer vision and edge AI for scouting and
-      precision interventions.
-    </p>
-    <p>
-      My work sits across the full stack: CAD and fabrication, CAN-level motor
-      control, ROS2 bringup and perception, model training and TensorRT
-      deployment on NVIDIA Jetson, and sim-to-real validation in Isaac Sim.
-      I enjoy work that spans those layers &mdash; where a hardware choice,
-      a controller gain, and a detector threshold all have to agree.
-    </p>
+    <div class="scroll-hint">scroll &nbsp;&darr;</div>
   </section>
 
-  <section class="card">
-    <h2>Current focus</h2>
-    <ul>
-      <li>Under-canopy skid-steer platform with an Isaac Sim digital twin for sim-to-real study.</li>
-      <li>Real-time perception on Jetson: detection, 3D localization, and tracking of plants and pests at field frame-rates.</li>
-      <li>A handheld edge-AI scout device for breeders and farmers, developed in a tight feedback loop with its end users.</li>
-    </ul>
+  <div class="divider"></div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="scene" id="about" data-nav="about">
+    <div class="reveal">
+      <div class="section-kicker">01 &nbsp; About</div>
+      <h2 class="display">
+        I like work that spans every layer &mdash; where a hardware choice,
+        a controller gain, and a detector threshold all have to agree.
+      </h2>
+    </div>
+
+    <div class="about-grid" style="margin-top:28px;">
+      <div class="reveal">
+        <p class="lede">
+          I just finished an M.S. in Biological &amp; Agricultural Engineering
+          with a Field Robotics focus (advisor: Dr. Ajay Sharda) and am
+          continuing into a Ph.D. leaning toward on-robot computer vision and
+          edge AI for scouting and precision interventions.
+        </p>
+        <p>
+          My work sits across the full stack: CAD and fabrication, CAN-level
+          motor control, ROS2 bringup and perception, model training and
+          TensorRT deployment on NVIDIA Jetson, and sim-to-real validation in
+          Isaac Sim. Before graduate school I designed ASME-code pressure
+          vessels in industry and researched prosthetic design and gait
+          analysis.
+        </p>
+      </div>
+
+      <div class="facts reveal">
+        <div class="fact">
+          <div class="label">Role</div>
+          <div class="value">Graduate Research Assistant<br><strong>Kansas State University · FarmsLab</strong></div>
+        </div>
+        <div class="fact">
+          <div class="label">Degree</div>
+          <div class="value">Ph.D., Bio. &amp; Ag. Engineering<br><span class="muted">Edge AI &amp; Computer Vision &middot; Dec 2026 – Present</span></div>
+        </div>
+        <div class="fact">
+          <div class="label">Previous</div>
+          <div class="value">M.S., Field Robotics &middot; K-State<br>B.E., Mech. Eng. &middot; Kathmandu University</div>
+        </div>
+        <div class="fact">
+          <div class="label">Thesis</div>
+          <div class="value" style="font-size:14px;"><em>Design, Fabrication, Simulation, and Vision-Guided Aphid Detection and Spot Spraying for an Under-Canopy Field Robot.</em></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>Education</h2>
-    <p>
-      <strong>Kansas State University</strong> &mdash; Manhattan, KS<br>
-      Ph.D., Biological &amp; Agricultural Engineering (Edge AI &amp; Computer Vision) &mdash; Dec 2026 &ndash; Present<br>
-      M.S., Biological &amp; Agricultural Engineering (Field Robotics) &mdash; Jan 2025 &ndash; Dec 2026
-    </p>
-    <p class="muted">
-      Thesis: <em>Design, Fabrication, Simulation, and Vision-Guided Aphid Detection and Spot Spraying for an Under-Canopy Field Robot.</em> Defended November 2026.
-    </p>
-    <p>
-      <strong>Kathmandu University</strong> &mdash; Dhulikhel, Nepal<br>
-      B.E., Mechanical Engineering &mdash; 2018 &ndash; 2022
-    </p>
+  <div class="divider"></div>
+
+  <!-- ===== PROJECTS PREVIEW ===== -->
+  <section class="scene" id="projects" data-nav="about">
+    <div class="reveal">
+      <div class="section-kicker">02 &nbsp; Selected work</div>
+      <h2 class="display">A few things I've built.</h2>
+      <p class="lede">
+        Field robots, on-robot perception, and the hardware around them. Each
+        tile links to a short write-up of what I did and what we used.
+      </p>
+    </div>
+
+    <div class="proj-tiles reveal">
+
+      <a class="proj-tile x-nav" href="project-skidsteer.html">
+        <div class="pt-kicker">2025 &ndash; Present · Field robot</div>
+        <h3>Skid-Steer Field Robot &mdash; Digital Twin &amp; Sim-to-Real</h3>
+        <p>Designed and fabricated an under-canopy skid-steer UGV; built a digital twin and a sim-vs-real alignment pipeline for controller validation.</p>
+        <div class="arrow">Read more &rarr;</div>
+      </a>
+
+      <a class="proj-tile x-nav" href="project-aphid-sprayer.html">
+        <div class="pt-kicker">2025 &ndash; Present · Perception + spraying</div>
+        <h3>Real-Time Vision-Guided Precision Sprayer</h3>
+        <p>Transformer-based pest detection on an embedded GPU, stereo 3D localization with an EKF, and MOSFET-driven solenoid spraying.</p>
+        <div class="arrow">Read more &rarr;</div>
+      </a>
+
+      <a class="proj-tile x-nav" href="project-handheld.html">
+        <div class="pt-kicker">2025 &ndash; Present · Edge AI device</div>
+        <h3>Handheld Edge-AI Crop Phenotyping Device</h3>
+        <p>A portable edge-AI scout for breeders and farmers. 3D-printed prototype, ROS2 middleware, 30 fps plant detection and tracking.</p>
+        <div class="arrow">Read more &rarr;</div>
+      </a>
+
+      <a class="proj-tile x-nav" href="project-maize-segmentation.html">
+        <div class="pt-kicker">2025 &ndash; 2026 · Benchmark</div>
+        <h3>3D Maize Instance Segmentation Benchmark</h3>
+        <p>Multi-architecture instance-segmentation benchmark on a public 3D maize dataset and a 2D-to-3D phenotyping regression study.</p>
+        <div class="arrow">Read more &rarr;</div>
+      </a>
+
+    </div>
+
+    <div class="proj-more reveal">
+      <a class="btn secondary x-nav" href="projects.html">See all projects &amp; publications &rarr;</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="scene" id="contact" data-nav="contact">
+    <div class="reveal">
+      <div class="section-kicker">03 &nbsp; Contact</div>
+      <h2 class="display">Let's talk.</h2>
+      <p class="lede">
+        Happy to chat about field robotics, on-robot perception, summer
+        internships, or anything in the project list above.
+      </p>
+    </div>
+
+    <div class="contact-rows reveal">
+      <div class="contact-row">
+        <div class="label">email</div>
+        <div class="value"><a href="mailto:sudanb@ksu.edu">sudanb@ksu.edu</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">linkedin</div>
+        <div class="value"><a href="https://www.linkedin.com/in/sudan-baral-720019179" target="_blank" rel="noopener">sudan-baral-720019179</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">github</div>
+        <div class="value"><a href="https://github.com/Sudanb" target="_blank" rel="noopener">github.com/Sudanb</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">location</div>
+        <div class="value">Manhattan, Kansas, USA</div>
+      </div>
+    </div>
   </section>
 
 </main>
