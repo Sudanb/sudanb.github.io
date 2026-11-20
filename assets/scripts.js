@@ -95,9 +95,16 @@
   })();
 })();
 
-/* 4. Media placeholder → real image swap */
+/* 4. Media placeholder → real image swap.
+      If an image fails to load, the figure is removed. After all attempts
+      finish, any gallery that became empty and any hero-media wrapper that
+      lost its figure are cleaned up. */
 (function () {
-  document.querySelectorAll('figure.media[data-img]').forEach(fig => {
+  const figures = document.querySelectorAll('figure.media[data-img]');
+  if (!figures.length) { cleanup(); return; }
+  let pending = figures.length;
+
+  figures.forEach(fig => {
     const src = fig.getAttribute('data-img');
     const alt = fig.getAttribute('data-alt') || '';
     const test = new Image();
@@ -109,9 +116,25 @@
       real.decoding = 'async';
       fig.innerHTML = '';
       fig.appendChild(real);
+      done();
     };
+    test.onerror = () => { fig.remove(); done(); };
     test.src = src;
   });
+
+  function done() { if (--pending === 0) cleanup(); }
+
+  function cleanup() {
+    document.querySelectorAll('.gallery').forEach(g => {
+      if (!g.querySelector('figure.media')) {
+        const card = g.closest('.card');
+        if (card) card.remove();
+      }
+    });
+    document.querySelectorAll('section.hero-media').forEach(s => {
+      if (!s.querySelector('figure.media')) s.remove();
+    });
+  }
 })();
 
 /* 5. Reveal-on-scroll — initially-visible elements reveal immediately

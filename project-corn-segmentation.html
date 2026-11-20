@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D-to-2D Corn Plant Segmentation — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html#about">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Vision research · Instance segmentation</div>
+  <h1>3D-to-2D Corn Plant Segmentation</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; 2026</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>First author</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/corn-seg-hero.webp" data-alt="Corn plant instance segmentation">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Projected maize scan with per-leaf instance masks</div>
+        <div class="filename">images/corn-seg-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      A comparative study of four instance-segmentation architectures run on
+      the MaizeField3D dataset. The training images are synthetically generated
+      by projecting 3D terrestrial laser scans (TLS) of field-grown maize
+      plants onto a simulated RealSense D457 camera orbiting each plant on a
+      hemisphere &mdash; 75 views per plant, 39,000 images total across 520
+      plants. The study evaluates each model under both a 2-class setting
+      (<em>stem, leaf</em>) and a 17-class setting that treats every leaf as its
+      own category.
+    </p>
+    <p>
+      The 3D-to-2D pipeline is a <strong>75&times; annotation-efficiency gain</strong>
+      over per-image labeling: each plant is labeled once in 3D, and every
+      instance identity propagates automatically to all 75 projected views.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Built the PLY-to-projected-image pipeline: camera intrinsics modeled on an Intel RealSense D457, hemisphere orbit of 5 azimuths &times; 5 elevations &times; 3 distances per plant, painter's-algorithm depth sorting, and per-instance integer masks exported to COCO polygon format.</li>
+      <li>Trained and benchmarked four architectures on the same dataset and splits:
+        <ul>
+          <li>YOLOv8m-seg &mdash; single-stage CNN</li>
+          <li>YOLO11m-seg (26m) &mdash; single-stage CNN with attention</li>
+          <li>Mask R-CNN &mdash; two-stage CNN</li>
+          <li>EoMT (DINOv2-S) &mdash; encoder-only transformer, query-based segmentation</li>
+        </ul>
+      </li>
+      <li>Ran each model under both a 2-class (stem, leaf) and a 17-class (stem + leaf1&ndash;leaf16) configuration.</li>
+      <li>Evaluated on a held-out 78-plant test split (5,850 images) using unified COCO mask mAP@50, mAP@50&ndash;95, and recall@100 &mdash; both overall and per-class, so leaf-emergence-order performance is comparable across models.</li>
+      <li>Wrote the dataset-preparation, evaluation-protocol, and per-model methodology into the repository so the benchmark is reproducible.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Code</h2>
+    <p>
+      Full training and evaluation pipelines for all four models, the
+      PLY&rarr;projected-image generator, COCO-format annotation tooling, and the
+      methodology documentation live in the repository.
+    </p>
+    <p>
+      <a class="btn secondary" href="https://github.com/Sudanb/3D-2D-corn-plant-segmentation" target="_blank" rel="noopener">Repository on GitHub &rarr;</a>
+    </p>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">YOLOv8m-seg · YOLO11m-seg</span>
+      <span class="chip accent">Mask R-CNN</span>
+      <span class="chip accent">EoMT · DINOv2</span>
+      <span class="chip">PyTorch · Lightning</span>
+      <span class="chip">Ultralytics</span>
+      <span class="chip">torchvision</span>
+      <span class="chip">pycocotools</span>
+      <span class="chip">torchmetrics</span>
+      <span class="chip">Open3D · PLY</span>
+      <span class="chip">CUDA 12 · WSL2</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/corn-seg-1.webp" data-alt="Projected scan">
+        <div class="placeholder"><div class="label">Data</div><div class="caption">Projected RGB from TLS scan</div><div class="filename">images/corn-seg-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/corn-seg-2.webp" data-alt="Instance masks">
+        <div class="placeholder"><div class="label">Labels</div><div class="caption">Per-leaf instance masks</div><div class="filename">images/corn-seg-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/corn-seg-3.webp" data-alt="Model comparison">
+        <div class="placeholder"><div class="label">Results</div><div class="caption">mAP by model and class config</div><div class="filename">images/corn-seg-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/corn-seg-4.webp" data-alt="Per-class recall">
+        <div class="placeholder"><div class="label">Results</div><div class="caption">Per-leaf recall by emergence order</div><div class="filename">images/corn-seg-4.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>
