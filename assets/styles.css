@@ -494,12 +494,18 @@ section.hero-scene {
 
 /* ---------- Media / gallery / placeholders ---------- */
 .hero-media .media {
-  height: 340px;
+  height: 460px;
   border-radius: 14px;
   overflow: hidden;
-  background: var(--bg-elev);
+  background:
+    linear-gradient(135deg, rgba(110, 231, 183, 0.04), transparent 70%),
+    var(--bg-elev);
   border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.hero-media .media img { object-fit: contain; max-height: 460px; }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -514,6 +520,7 @@ section.hero-scene {
   position: relative;
 }
 .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media.contain img { object-fit: contain; padding: 10px; background: #0b0d12; }
 .media .placeholder {
   width: 100%; height: 100%;
   display: flex; flex-direction: column;
