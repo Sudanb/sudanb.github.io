@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-Time Vision-Guided Precision Sprayer — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">On-robot perception · Spraying hardware</div>
+  <h1>Real-Time Vision-Guided Precision Sprayer</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; Present</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>Perception + hardware lead</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/aphid-hero.webp" data-alt="Precision sprayer in operation">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Field shot: cameras + spray boom on the robot</div>
+        <div class="filename">images/aphid-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      A real-time pest-detection and precision-spraying system that runs on the
+      skid-steer platform. Stereo cameras detect aphids, a lightweight 3D
+      localization step estimates where each one sits relative to the robot,
+      and a MOSFET-driven solenoid array fires the nozzles that correspond to
+      those positions &mdash; just the nozzles that need to fire, just when
+      they need to fire.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Transformer-based aphid detection (RT-DETRv2) running in real time on an embedded GPU with TensorRT.</li>
+      <li>Stereo 3D localization of detections plus an EKF to stabilize pest position estimates relative to the cameras.</li>
+      <li>MOSFET-based solenoid driver stack for targeted spraying, with a secondary I&sup2;C path kept as a hardware-debuggable fallback to the OEM CAN sprayer.</li>
+      <li>Dataset curation and augmentation for the aphid class; training in PyTorch and export through ONNX for deployment.</li>
+      <li>End-to-end ROS2 pipeline: perception, detection &rarr; 3D pose bridge, nozzle controller, and sprayer driver nodes.</li>
+    </ul>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">RT-DETRv2</span>
+      <span class="chip accent">TensorRT</span>
+      <span class="chip">PyTorch</span>
+      <span class="chip">ONNX</span>
+      <span class="chip">NVIDIA Jetson</span>
+      <span class="chip">Isaac ROS</span>
+      <span class="chip">ROS2 Humble</span>
+      <span class="chip">OpenCV</span>
+      <span class="chip">Stereo camera</span>
+      <span class="chip">CAN · J1939</span>
+      <span class="chip">I&sup2;C · MCP23017</span>
+      <span class="chip">EKF</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/aphid-1.webp" data-alt="Detection overlay">
+        <div class="placeholder"><div class="label">Perception</div><div class="caption">Detection overlay</div><div class="filename">images/aphid-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/aphid-2.webp" data-alt="Stereo rig">
+        <div class="placeholder"><div class="label">Hardware</div><div class="caption">Stereo camera rig</div><div class="filename">images/aphid-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/aphid-3.webp" data-alt="Spray nozzle array">
+        <div class="placeholder"><div class="label">Hardware</div><div class="caption">Spray nozzle array</div><div class="filename">images/aphid-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/aphid-4.webp" data-alt="Solenoid driver board">
+        <div class="placeholder"><div class="label">Electronics</div><div class="caption">MOSFET solenoid driver board</div><div class="filename">images/aphid-4.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/aphid-5.webp" data-alt="ROS2 pipeline diagram">
+        <div class="placeholder"><div class="label">System</div><div class="caption">ROS2 pipeline diagram</div><div class="filename">images/aphid-5.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/aphid-6.webp" data-alt="Field demo">
+        <div class="placeholder"><div class="label">Field</div><div class="caption">In-row demonstration</div><div class="filename">images/aphid-6.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>

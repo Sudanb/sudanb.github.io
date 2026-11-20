@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camera Mount Validation in Simulation — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Simulation study · Design decision</div>
+  <h1>Camera Mount Validation in Simulation</h1>
+  <div class="proj-meta">
+    <span>2026</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>Author</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/sweep-hero.webp" data-alt="Simulated row-crop sweep">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Simulator view of a row with the camera pose being swept</div>
+        <div class="filename">images/sweep-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      Before building a camera mount for the field platform, I swept a large
+      set of candidate camera poses in a physics simulator against
+      photorealistic crop assets and measured how much of each plant was
+      visible in each pose. The sweep covered elevation, tilt angle, along-row
+      position, and row spacing &mdash; tens of thousands of poses in total.
+      The result picked the mount geometry up front, rather than iterating on
+      hardware in the field.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Built the scene from real plant assets and placed cameras programmatically across the sweep.</li>
+      <li>Computed per-plant visibility ratios (how much of the plant stays in the frame) for every pose.</li>
+      <li>Analyzed results to identify the best-performing region of the (elevation, angle) space across row spacings.</li>
+      <li>Used the output to inform the mount geometry on the physical robot.</li>
+    </ul>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">Isaac Sim</span>
+      <span class="chip">Python</span>
+      <span class="chip">USD · OmniGraph</span>
+      <span class="chip">RealSense model</span>
+      <span class="chip">Pandas</span>
+      <span class="chip">Matplotlib</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/sweep-1.webp" data-alt="Scene setup">
+        <div class="placeholder"><div class="label">Scene</div><div class="caption">Rows with photorealistic assets</div><div class="filename">images/sweep-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/sweep-2.webp" data-alt="Camera pose grid">
+        <div class="placeholder"><div class="label">Sweep</div><div class="caption">Camera pose grid</div><div class="filename">images/sweep-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/sweep-3.webp" data-alt="Visibility heatmap">
+        <div class="placeholder"><div class="label">Results</div><div class="caption">Visibility heatmap</div><div class="filename">images/sweep-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/sweep-4.webp" data-alt="Chosen mount">
+        <div class="placeholder"><div class="label">Hardware</div><div class="caption">Mount built from the result</div><div class="filename">images/sweep-4.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>

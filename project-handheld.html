@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handheld Edge-AI Crop Phenotyping Device — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Edge-AI device · Hardware + software</div>
+  <h1>Handheld Edge-AI Crop Phenotyping Device</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; Present</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>Design lead</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/handheld-hero.webp" data-alt="Handheld edge-AI scouting device">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Handheld prototype in field use</div>
+        <div class="filename">images/handheld-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      A portable edge-AI device that lets breeders and farmers walk a field and
+      get real-time phenotypic insights on the plants in front of them. The
+      hardware exists in two form factors: a handheld unit for walked rows and
+      a ruggedized mountable variant for vehicles and carts. All inference runs
+      on-device.
+    </p>
+    <p>
+      I lead the design and development of the device and work directly with
+      the breeders and farmers who use it, incorporating their feedback into
+      successive revisions of the hardware and software.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Designed the edge-AI system end-to-end: compute, sensing, enclosure, power, and software.</li>
+      <li>3D-printed hardware prototype with a handheld form factor and a ruggedized mountable variant.</li>
+      <li>ROS2 middleware with packages written in Python and C++ for sensing, inference, and logging.</li>
+      <li>On-device 3D localization, detection, and tracking of plants at 30 fps.</li>
+      <li>Run a feedback loop with breeders and farmers to refine features, ergonomics, and workflow fit.</li>
+    </ul>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">NVIDIA Jetson</span>
+      <span class="chip accent">TensorRT</span>
+      <span class="chip">ROS2 Humble</span>
+      <span class="chip">Python · C++</span>
+      <span class="chip">RealSense (RGB+D)</span>
+      <span class="chip">Dual-band GNSS</span>
+      <span class="chip">3D printing</span>
+      <span class="chip">Custom PCB</span>
+      <span class="chip">I&sup2;C sensing</span>
+      <span class="chip">ByteTrack / tracking</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/handheld-1.webp" data-alt="Handheld prototype">
+        <div class="placeholder"><div class="label">Hardware</div><div class="caption">Handheld prototype, close-up</div><div class="filename">images/handheld-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/handheld-2.webp" data-alt="Mountable variant">
+        <div class="placeholder"><div class="label">Hardware</div><div class="caption">Ruggedized mountable variant</div><div class="filename">images/handheld-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/handheld-3.webp" data-alt="Live detection view">
+        <div class="placeholder"><div class="label">Software</div><div class="caption">Live detection and tracking view</div><div class="filename">images/handheld-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/handheld-4.webp" data-alt="CAD render">
+        <div class="placeholder"><div class="label">CAD</div><div class="caption">Enclosure render</div><div class="filename">images/handheld-4.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/handheld-5.webp" data-alt="Field use by breeder">
+        <div class="placeholder"><div class="label">Field</div><div class="caption">In-field use by a breeder</div><div class="filename">images/handheld-5.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/handheld-6.webp" data-alt="System block diagram">
+        <div class="placeholder"><div class="label">System</div><div class="caption">Block diagram</div><div class="filename">images/handheld-6.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>

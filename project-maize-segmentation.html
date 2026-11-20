@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Maize Instance Segmentation Benchmark — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Benchmark &amp; study · Journal manuscript</div>
+  <h1>3D Maize Instance Segmentation Benchmark</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; 2026</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>First author</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/maize-hero.webp" data-alt="Maize instance segmentation">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Segmented maize plants from the benchmark</div>
+        <div class="filename">images/maize-hero.webp</div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      A multi-architecture benchmark for instance segmentation on a public 3D
+      maize dataset, paired with a study of how well 2D image-based phenotyping
+      can recover 3D ground-truth measurements. The work is written up as a
+      journal manuscript that reports the benchmark alongside the honest limits
+      of the 2D-to-3D regression approach.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
+    <ul>
+      <li>Set up a consistent training and evaluation harness across several segmentation architectures.</li>
+      <li>Ran the benchmark and compiled per-model results into a reproducible comparison.</li>
+      <li>Extended the study to 2D-to-3D phenotyping regression and characterized where it holds up and where it does not.</li>
+      <li>Wrote the manuscript in IEEE format for journal submission.</li>
+    </ul>
+  </section>
+
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">PyTorch</span>
+      <span class="chip">Instance segmentation</span>
+      <span class="chip">Point clouds</span>
+      <span class="chip">Open3D</span>
+      <span class="chip">NumPy · Pandas</span>
+      <span class="chip">LaTeX / IEEEtran</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/maize-1.webp" data-alt="Raw scans">
+        <div class="placeholder"><div class="label">Data</div><div class="caption">Example raw scans</div><div class="filename">images/maize-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/maize-2.webp" data-alt="Segmentation output">
+        <div class="placeholder"><div class="label">Model</div><div class="caption">Segmentation output</div><div class="filename">images/maize-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/maize-3.webp" data-alt="Model comparison">
+        <div class="placeholder"><div class="label">Results</div><div class="caption">Model comparison plot</div><div class="filename">images/maize-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/maize-4.webp" data-alt="2D-to-3D regression">
+        <div class="placeholder"><div class="label">Study</div><div class="caption">2D-to-3D regression analysis</div><div class="filename">images/maize-4.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
+</main>
+
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
+</body>
+</html>

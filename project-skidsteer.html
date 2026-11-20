@@ -1,100 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autonomous Skid‑Steer Robot — Sudan Baral</title>
-<meta name="color-scheme" content="dark light" />
-<style>
-  :root{--bg:#0b0c10;--card:rgba(17,19,23,.6);--border:rgba(255,255,255,.08);--text:#e6eaf0;--muted:#9aa0a6}
-  html,body{height:100%} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;transition:opacity .15s ease}
-  body.page-in{opacity:1} body.page-out{opacity:0}
-  body::before{content:"";position:fixed;inset:-20vmax;z-index:0;background:
-    radial-gradient(60vmax 60vmax at 10% 20%, rgba(110,231,183,.12), transparent 60%),
-    radial-gradient(70vmax 70vmax at 90% 10%, rgba(138,180,248,.10), transparent 60%),
-    radial-gradient(80vmax 80vmax at 50% 120%, rgba(255,255,255,.06), transparent 60%);
-    filter:blur(18px);animation:drift 50s ease-in-out infinite alternate}
-  @keyframes drift{to{transform:translate3d(1.5vw,-1vh,0) rotate(.25deg)}}
-  #bg{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.75}
-  header,footer{position:relative;z-index:3;padding:16px}
-  .container{max-width:1000px;margin:0 auto;padding:20px;position:relative;z-index:2}
-  nav{margin:12px 0;text-align:center;position:sticky;top:0;z-index:4;background:rgba(17,19,23,.6);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-  .btn{display:inline-block;padding:10px 14px;margin:6px;border-radius:10px;border:1px solid var(--border);text-decoration:none;font-weight:700}
-  .btn.secondary{background:rgba(255,255,255,.06);color:#e6eaf0}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin:20px 0;backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  .muted{color:var(--muted)}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-  .thumb{position:relative;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#0f1115}
-  .thumb img{width:100%;height:180px;object-fit:cover;display:block;filter:contrast(1.05)}
-  .thumb figcaption{font-size:.9rem;color:var(--muted);padding:8px}
-</style></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skid-Steer Field Robot — Sudan Baral</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
 <body>
-<canvas id="bg" aria-hidden="true"></canvas>
 
-<header class="container">
-  <nav>
-    <a class="btn secondary x-nav" href="projects.html">← Back to Projects</a>
-    <a class="btn secondary x-nav" href="index.html">About</a>
-    <a class="btn secondary x-nav" href="cv.html">CV</a>
-    <a class="btn secondary x-nav" href="contact.html">Contact</a>
-  </nav>
-  <h1>Autonomous Skid‑Steer Robot for Under‑Canopy Agriculture</h1>
-  <p class="muted">2025–Present · Kansas State University — Field Robotics</p>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="x-nav" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container proj-head">
+  <div class="kicker">Field robot · Mechanical + controls + sim</div>
+  <h1>Skid-Steer Field Robot &mdash; Digital Twin &amp; Sim-to-Real Study</h1>
+  <div class="proj-meta">
+    <span>2025 &ndash; Present</span>
+    <span>Kansas State University · FarmsLab</span>
+    <span>Lead designer</span>
+  </div>
 </header>
 
 <main class="container">
-  <section class="card">
-    <h2>Overview</h2>
-    <p>Designed and fabricated a skid‑steer UGV optimized for under‑canopy navigation in row‑crop environments. Integrated multi‑sensor perception (stereo/mono cameras, IMU) with ROS2‑based navigation and custom controllers.</p>
+
+  <section class="hero-media">
+    <figure class="media" data-img="images/skidsteer-hero.webp" data-alt="Skid-steer field robot">
+      <div class="placeholder">
+        <div class="label">Hero image</div>
+        <div class="caption">Field photo or CAD render of the platform</div>
+        <div class="filename">images/skidsteer-hero.webp</div>
+      </div>
+    </figure>
   </section>
 
   <section class="card">
-    <h2>Technical Highlights</h2>
+    <h2>Overview</h2>
+    <p>
+      An under-canopy skid-steer platform designed from scratch for row-crop
+      scouting and spraying tasks. The project spans the full stack: a
+      CAD-first mechanical design and build, a CAN-bus motor-control stack, a
+      ROS2 bringup and perception pipeline, and a digital twin used to study
+      how controller behavior transfers from simulation to the real robot.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What I did</h2>
     <ul>
-      <li>Vehicle kinematics modeling (MATLAB) + trajectory tracking control</li>
-      <li>ROS2 nodes for sensor fusion, localization, and path following</li>
-      <li>Under‑canopy‑aware perception with camera‑IMU pipelines</li>
-      <li>Simulation workflows with Isaac Sim for validation</li>
+      <li>Full mechanical design and fabrication of a ~125 kg under-canopy robotic platform.</li>
+      <li>FEA on key load-bearing components ahead of fabrication.</li>
+      <li>MATLAB simulation for torque and envelope estimates to drive actuator selection.</li>
+      <li>ROS2 bringup and perception software for stereo cameras, GNSS, IMU, and LiDAR.</li>
+      <li>Modular C++ ROS2 controller stack (motor, estimator, and controller interfaces) with kinematic shaping and a minimum-turning-radius projection.</li>
+      <li>Isaac Sim digital twin with rosbag-driven replay for controller validation and sim-vs-real comparison.</li>
     </ul>
   </section>
 
-  <section class="card">
-    <h2>Gallery (drop <strong>A1…A12</strong> in repo root)</h2>
-    <div id="gallery" class="gallery"></div>
-    <p class="muted">Accepted: <code>.webp</code>, <code>.jpg</code>, <code>.png</code>. Missing files are skipped.</p>
+  <section class="card compact">
+    <h3>Stack</h3>
+    <div class="chips">
+      <span class="chip accent">ROS2 Humble</span>
+      <span class="chip accent">C++ / pluginlib</span>
+      <span class="chip">Isaac Sim</span>
+      <span class="chip">ODrive S1</span>
+      <span class="chip">CAN bus</span>
+      <span class="chip">SocketCAN · J1939</span>
+      <span class="chip">SolidWorks</span>
+      <span class="chip">ANSYS</span>
+      <span class="chip">MATLAB / Simulink</span>
+      <span class="chip">URDF · USD</span>
+    </div>
   </section>
+
+  <section class="card">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure class="media" data-img="images/skidsteer-1.webp" data-alt="CAD assembly">
+        <div class="placeholder"><div class="label">CAD</div><div class="caption">Assembly render</div><div class="filename">images/skidsteer-1.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/skidsteer-2.webp" data-alt="Chassis build">
+        <div class="placeholder"><div class="label">Build</div><div class="caption">Chassis and drivetrain</div><div class="filename">images/skidsteer-2.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/skidsteer-3.webp" data-alt="Electronics stack">
+        <div class="placeholder"><div class="label">Electronics</div><div class="caption">Power and motor-control stack</div><div class="filename">images/skidsteer-3.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/skidsteer-4.webp" data-alt="In the field">
+        <div class="placeholder"><div class="label">Field</div><div class="caption">Robot in rows</div><div class="filename">images/skidsteer-4.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/skidsteer-5.webp" data-alt="Isaac Sim digital twin">
+        <div class="placeholder"><div class="label">Sim</div><div class="caption">Isaac Sim digital twin</div><div class="filename">images/skidsteer-5.webp</div></div>
+      </figure>
+      <figure class="media" data-img="images/skidsteer-6.webp" data-alt="Sim-vs-real plot">
+        <div class="placeholder"><div class="label">Analysis</div><div class="caption">Sim-vs-real trajectory overlay</div><div class="filename">images/skidsteer-6.webp</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <p style="margin-top:20px;"><a class="btn ghost x-nav" href="projects.html">&larr; All projects</a></p>
+
 </main>
 
-<footer class="container"><p>© <script>document.write(new Date().getFullYear())</script> Sudan Baral</p></footer>
-
-<script>
-  (function(){const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(!reduce){document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('page-in'));document.querySelectorAll('a.x-nav').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const href=a.getAttribute('href');document.body.classList.remove('page-in');document.body.classList.add('page-out');setTimeout(()=>location.href=href,150)},{passive:false}));}else{document.body.classList.add('page-in');}})();
-  (function(){const c=document.getElementById('bg');if(!c)return;const x=c.getContext('2d');let w,h,dpr=Math.min(devicePixelRatio||1,2),S=[],O=[];
-    function size(){w=c.width=Math.floor(innerWidth*dpr);h=c.height=Math.floor(innerHeight*dpr);c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}
-    function R(a,b){return a+Math.random()*(b-a)}
-    function init(){S=[];O=[];for(let i=0;i<180;i++)S.push({x:R(0,w),y:R(0,h),r:R(.5,1.6)*dpr,a:R(.55,.95),tw:R(.0015,.0045)*(Math.random()<.5?-1:1)});for(let i=0;i<14;i++)O.push({x:R(0,w),y:R(0,h),r:R(50,130)*dpr,vx:R(-.03,.03)*dpr,vy:R(-.02,.02)*dpr})}
-    function tick(){x.clearRect(0,0,w,h);x.fillStyle='rgba(255,255,255,1)';for(const s of S){s.a+=s.tw;if(s.a<.5||s.a>1)s.tw*=-1;x.globalAlpha=s.a;x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);x.fill()}x.globalAlpha=1;x.globalCompositeOperation='lighter';for(const o of O){o.x+=o.vx;o.y+=o.vy;if(o.x<-60||o.x>w+60)o.vx*=-1;if(o.y<-60||o.y>h+60)o.vy*=-1;const g=x.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);g.addColorStop(0,'rgba(110,231,183,0.07)');g.addColorStop(1,'rgba(110,231,183,0)');x.fillStyle=g;x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fill()}requestAnimationFrame(tick)}
-    addEventListener('resize',()=>{size();init()}); size(); init(); tick();})();
-  // gallery A1…A12
-  (function(){
-    const container = document.getElementById('gallery');
-    const names = Array.from({length:12}, (_,i)=>'A'+(i+1));
-    const exts = ['webp','jpg','png'];
-    function addThumb(src, label){
-      const fig=document.createElement('figure');fig.className='thumb';
-      const img=document.createElement('img');img.alt=label;img.loading='lazy';img.decoding='async';
-      img.src=src;img.onerror=()=>fig.remove();
-      const cap=document.createElement('figcaption');cap.textContent=label;
-      fig.appendChild(img);fig.appendChild(cap);container.appendChild(fig);
-    }
-    names.forEach(name=>{
-      (function tryExt(i){
-        if(i>=exts.length) return;
-        const test=new Image(), candidate=`${name}.${exts[i]}?v=${Date.now()}`;
-        test.onload=()=>addThumb(candidate,name);
-        test.onerror=()=>tryExt(i+1);
-        test.src=candidate;
-      })(0);
-    });
-  })();
-</script>
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
 </body>
 </html>

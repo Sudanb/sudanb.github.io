@@ -1,148 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sudan Baral — Field Robotics @ K-State</title>
-<meta name="color-scheme" content="dark light" />
-<style>
-  :root{--bg:#0b0c10;--card:rgba(17,19,23,.6);--border:rgba(255,255,255,.08);
-        --text:#e6eaf0;--muted:#9aa0a6;--brand:#6ee7b7}
-  html,body{height:100%}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
-       background:var(--bg);color:var(--text);overflow-x:hidden;opacity:0;transition:opacity .15s ease}
-  body.page-in{opacity:1} body.page-out{opacity:0}
-  body::before{content:"";position:fixed;inset:-20vmax;z-index:0;
-    background:
-      radial-gradient(60vmax 60vmax at 10% 20%, rgba(110,231,183,.12), transparent 60%),
-      radial-gradient(70vmax 70vmax at 90% 10%, rgba(138,180,248,.10), transparent 60%),
-      radial-gradient(80vmax 80vmax at 50% 120%, rgba(255,255,255,.06), transparent 60%);
-    filter:blur(18px);animation:drift 50s ease-in-out infinite alternate}
-  @keyframes drift{to{transform:translate3d(1.5vw,-1vh,0) rotate(.25deg)}}
-  #bg{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.75}
-  header,footer{position:relative;z-index:3;padding:16px}
-  .container{max-width:1000px;margin:0 auto;padding:20px;position:relative;z-index:2}
-  nav{margin:12px 0;text-align:center;position:sticky;top:0;z-index:4;background:rgba(17,19,23,.6);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-  .btn{display:inline-block;padding:10px 14px;margin:6px;border-radius:10px;border:1px solid var(--border);text-decoration:none;font-weight:700}
-  .btn.primary{background:linear-gradient(135deg,var(--brand),color-mix(in oklab,var(--brand) 60%,transparent));color:#0b0c10;border-color:transparent}
-  .btn.secondary{background:rgba(255,255,255,.06);color:#e6eaf0}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin:20px 0;backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  .muted{color:var(--muted)}
-  .header-flex{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
-  .avatar{width:88px; height:88px; border-radius:999px; object-fit:cover;
-          border:1px solid var(--border); box-shadow:0 8px 30px rgba(0,0,0,.45); background:#121417}
-  .avatar.hidden{display:none}
-  @media (prefers-reduced-motion: reduce){
-    body{transition:none !important;opacity:1 !important}
-    body::before{animation:none} #bg{display:none}
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudan Baral — Field Robotics</title>
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Graduate researcher in field robotics at Kansas State University. Mechanical design, ROS2, computer vision, and edge AI for agriculture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<canvas id="bg" aria-hidden="true"></canvas>
 
-
-
-<nav>
-  <a class="btn primary" href="index.html">About Me</a>
-  <a class="btn secondary x-nav" href="projects.html">Projects & Research</a>
-  <a class="btn secondary x-nav" href="cv.html">CV</a>
-  <a class="btn secondary x-nav" href="contact.html">Contact</a>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand x-nav" href="index.html">sudan_baral<span class="dot">//</span></a>
+    <div class="nav-links">
+      <a class="active" href="index.html">About</a>
+      <a class="x-nav" href="projects.html">Projects</a>
+      <a class="x-nav" href="cv.html">CV</a>
+      <a class="x-nav" href="contact.html">Contact</a>
+    </div>
+  </div>
 </nav>
-<header class="container">
+
+<header class="container hero">
   <div class="header-flex">
-    <img id="avatar" class="avatar hidden" alt="Profile photo of Sudan Baral">
+    <img id="avatar" class="avatar hidden" alt="Sudan Baral">
     <div>
+      <div class="eyebrow">Field robotics · Perception · Edge AI</div>
       <h1>Sudan Baral</h1>
-      <p>Email: <a href="mailto:sudanb@ksu.edu">sudanb@ksu.edu</a> ·
-         LinkedIn: <a href="https://www.linkedin.com/in/sudan-baral-720019179">linkedin.com/in/sudan-baral-720019179</a> ·
-         GitHub: <a href="https://github.com/sudan">github.com/sudan</a></p>
+      <p class="lede">
+        Graduate researcher at Kansas State University's FarmsLab. I design and
+        build field robots end-to-end &mdash; from the mechanical platform and
+        motor control through ROS2 software, real-time computer vision, and
+        on-robot edge AI.
+      </p>
+      <div class="meta">
+        <span><a href="mailto:sudanb@ksu.edu">sudanb@ksu.edu</a></span>
+        <span><a href="https://www.linkedin.com/in/sudan-baral-720019179" target="_blank" rel="noopener">LinkedIn</a></span>
+        <span><a href="https://github.com/Sudanb" target="_blank" rel="noopener">GitHub</a></span>
+      </div>
     </div>
   </div>
 </header>
-  
-<main class="container">
-  <section class="card">
-    <h2>About Me</h2>
-    <p>I am a PhD student in Biological & Agricultural Engineering at Kansas State University, advised by Dr. Ajay Sharda. My work focuses on field robotics for agriculture—under‑canopy autonomy, perception & controls—and validating stacks with ROS2 and Isaac Sim.</p>
-    <h3>Education</h3>
-    <p><strong>Kansas State University</strong> — PhD, Biological & Agricultural Engineering, Field Robotics (2025–Present)<br>
-       <span class="muted">Focus: Under‑canopy autonomy, ROS2/Isaac Sim, perception & controls.</span></p>
-    <p><strong>Kathmandu University</strong> — BE, Mechanical Engineering (2018–2022)</p>
 
-    <h3>Research Interests</h3>
+<main class="container">
+
+  <section class="card">
+    <h2>About</h2>
+    <p>
+      I just completed an M.S. in Biological and Agricultural Engineering with a
+      Field Robotics focus (advisor: Dr. Ajay Sharda) and am continuing into a
+      Ph.D. leaning toward on-robot computer vision and edge AI for scouting and
+      precision interventions.
+    </p>
+    <p>
+      My work sits across the full stack: CAD and fabrication, CAN-level motor
+      control, ROS2 bringup and perception, model training and TensorRT
+      deployment on NVIDIA Jetson, and sim-to-real validation in Isaac Sim.
+      I enjoy work that spans those layers &mdash; where a hardware choice,
+      a controller gain, and a detector threshold all have to agree.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Current focus</h2>
     <ul>
-      <li>Field robotics and autonomous systems</li>
-      <li>ROS2, Isaac Sim, and computer vision for agriculture</li>
-      <li>Additive manufacturing and mechanical metamaterials</li>
-      <li>Precision farming</li>
+      <li>Under-canopy skid-steer platform with an Isaac Sim digital twin for sim-to-real study.</li>
+      <li>Real-time perception on Jetson: detection, 3D localization, and tracking of plants and pests at field frame-rates.</li>
+      <li>A handheld edge-AI scout device for breeders and farmers, developed in a tight feedback loop with its end users.</li>
     </ul>
   </section>
+
+  <section class="card">
+    <h2>Education</h2>
+    <p>
+      <strong>Kansas State University</strong> &mdash; Manhattan, KS<br>
+      Ph.D., Biological &amp; Agricultural Engineering (Edge AI &amp; Computer Vision) &mdash; Dec 2026 &ndash; Present<br>
+      M.S., Biological &amp; Agricultural Engineering (Field Robotics) &mdash; Jan 2025 &ndash; Dec 2026
+    </p>
+    <p class="muted">
+      Thesis: <em>Design, Fabrication, Simulation, and Vision-Guided Aphid Detection and Spot Spraying for an Under-Canopy Field Robot.</em> Defended November 2026.
+    </p>
+    <p>
+      <strong>Kathmandu University</strong> &mdash; Dhulikhel, Nepal<br>
+      B.E., Mechanical Engineering &mdash; 2018 &ndash; 2022
+    </p>
+  </section>
+
 </main>
 
-<footer class="container"><p>© <script>document.write(new Date().getFullYear())</script> Sudan Baral</p></footer>
-
-<script>
-  // fast page fade
-  (function(){
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!reduce){
-      document.addEventListener('DOMContentLoaded', ()=> document.body.classList.add('page-in'));
-      document.querySelectorAll('a.x-nav').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          e.preventDefault(); const href=a.getAttribute('href');
-          document.body.classList.remove('page-in'); document.body.classList.add('page-out');
-          setTimeout(()=> location.href=href, 150);
-        }, {passive:false});
-      });
-    }else{ document.body.classList.add('page-in'); }
-  })();
-
-  // load profile.{webp|jpg|png} if present
-  (function(){
-    const img = document.getElementById('avatar');
-    const candidates = ['profile.webp','profile.jpg','profile.png'];
-    let i = 0;
-    function tryNext(){
-      if(i >= candidates.length) return;
-      const src = candidates[i++];
-      const test = new Image();
-      test.onload = ()=>{ img.src = src; img.classList.remove('hidden'); };
-      test.onerror = tryNext;
-      test.src = src + '?v=' + Date.now();
-    }
-    tryNext();
-  })();
-
-  // brighter stars + soft orbs
-  (function(){
-    const c=document.getElementById('bg'); if(!c) return; const x=c.getContext('2d');
-    let w,h,dpr=Math.min(devicePixelRatio||1,2),stars=[],orbs=[];
-    function size(){w=c.width=Math.floor(innerWidth*dpr);h=c.height=Math.floor(innerHeight*dpr);c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}
-    function R(a,b){return a+Math.random()*(b-a)}
-    function init(){
-      stars=[]; orbs=[];
-      for(let i=0;i<180;i++) stars.push({x:R(0,w),y:R(0,h),r:R(0.5,1.6)*dpr,a:R(0.55,0.95),tw:R(0.0015,0.0045)*(Math.random()<.5?-1:1)});
-      for(let i=0;i<14;i++)  orbs.push({x:R(0,w),y:R(0,h),r:R(50,130)*dpr,vx:R(-0.03,0.03)*dpr,vy:R(-0.02,0.02)*dpr});
-    }
-    function tick(){
-      x.clearRect(0,0,w,h);
-      x.fillStyle='rgba(255,255,255,1)';
-      for(const s of stars){
-        s.a+=s.tw; if(s.a<0.5||s.a>1) s.tw*=-1;
-        x.globalAlpha=s.a; x.beginPath(); x.arc(s.x,s.y,s.r,0,Math.PI*2); x.fill();
-      }
-      x.globalAlpha=1; x.globalCompositeOperation='lighter';
-      for(const o of orbs){
-        o.x+=o.vx; o.y+=o.vy; if(o.x<-60||o.x>w+60) o.vx*=-1; if(o.y<-60||o.y>h+60) o.vy*=-1;
-        const g=x.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
-        g.addColorStop(0,'rgba(110,231,183,0.07)'); g.addColorStop(1,'rgba(110,231,183,0)');
-        x.fillStyle=g; x.beginPath(); x.arc(o.x,o.y,o.r,0,Math.PI*2); x.fill();
-      }
-      requestAnimationFrame(tick);
-    }
-    addEventListener('resize',()=>{size();init()}); size(); init(); tick();
-  })();
-</script>
+<footer class="site-foot">&copy; <span id="yr"></span> Sudan Baral &middot; Manhattan, KS</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scripts.js"></script>
 </body>
 </html>
