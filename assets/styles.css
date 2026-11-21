@@ -10,12 +10,12 @@
   --surface-alt: #1a1a19;
   --border: rgba(250, 249, 247, 0.08);
   --border-strong: rgba(250, 249, 247, 0.16);
-  --text: #d9d8d4;
-  --text-strong: #faf9f7;
+  --text: #d6d7da;
+  --text-strong: #f2f3f5;
   --muted: #9a9a9a;
   --muted-2: #5c5c5c;
-  --accent: #c9ccd1;
-  --accent-dim: rgba(201, 204, 209, 0.10);
+  --accent: #b8bbc0;
+  --accent-dim: rgba(184, 187, 192, 0.10);
   --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   --mono: 'Fraunces', 'Iowan Old Style', Georgia, serif;
@@ -47,8 +47,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(70vmax 50vmax at 5% -5%, rgba(201, 204, 209, 0.04), transparent 60%),
-    radial-gradient(70vmax 50vmax at 95% 105%, rgba(138, 180, 248, 0.05), transparent 60%);
+    radial-gradient(70vmax 50vmax at 5% -5%, rgba(184, 187, 192, 0.04), transparent 60%),
+    radial-gradient(70vmax 50vmax at 95% 105%, rgba(184, 187, 192, 0.035), transparent 60%);
 }
 
 /* Robotics trajectory layer — injected by scripts.js */
@@ -325,7 +325,7 @@ section.hero-scene {
   border: 1px solid var(--border-strong);
   background: var(--bg-elev);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45),
-              0 0 0 1px rgba(201, 204, 209, 0.04) inset;
+              0 0 0 1px rgba(184, 187, 192, 0.04) inset;
   position: relative;
 }
 .hero-portrait::after {
@@ -573,7 +573,7 @@ section.hero-scene {
   border-radius: 14px;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(201, 204, 209, 0.04), transparent 70%),
+    linear-gradient(135deg, rgba(184, 187, 192, 0.04), transparent 70%),
     var(--bg-elev);
   border: 1px solid var(--border);
   display: flex;
@@ -617,7 +617,7 @@ section.hero-scene {
   padding: 16px;
   text-align: center;
   background:
-    linear-gradient(135deg, rgba(201, 204, 209, 0.04), transparent 60%),
+    linear-gradient(135deg, rgba(184, 187, 192, 0.04), transparent 60%),
     repeating-linear-gradient(135deg, transparent 0 14px, rgba(255, 255, 255, 0.025) 14px 15px);
   color: var(--muted);
   gap: 8px;
